@@ -1,0 +1,1 @@
+cmd_/home/user/workspace/rtl8821CU/8821cu.ko := ld -r -m elf_x86_64  -z max-page-size=0x200000 -T ./scripts/module-common.lds --build-id  -o /home/user/workspace/rtl8821CU/8821cu.ko /home/user/workspace/rtl8821CU/8821cu.o /home/user/workspace/rtl8821CU/8821cu.mod.o ;  true
