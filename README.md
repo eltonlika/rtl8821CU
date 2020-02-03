@@ -1,4 +1,4 @@
-# Realtek RTL8811CU/RTL8821CU USB wifi adapter driver version 5.4.1 for Linux 4.4.x up to 5.4.x
+# Realtek RTL8811CU/RTL8821CU USB wifi adapter driver version 5.4.1 for Linux 4.4.x up to 5.5.x
 
 Working with KuWfi Free Driver Wireless USB Wifi Adapter 600Mbps USB Ethernet 2.4G 5G Dual Band Wi-fi Network Card 802.11n/g/a/ac from AliExpress: https://www.aliexpress.com/item/32953749589.html?spm=2114.13010708.0.0.11234c4dY0qO4A
 
