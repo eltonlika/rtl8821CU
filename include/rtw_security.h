@@ -249,7 +249,7 @@ struct security_priv {
 #define SEC_IS_BIP_KEY_INSTALLED(sec) _FALSE
 #endif
 
-struct sha256_state {
+struct sha256_state_rtl_internal {
 	u64 length;
 	u32 state[8], curlen;
 	u8 buf[64];
