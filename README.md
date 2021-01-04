@@ -1,9 +1,6 @@
 # Realtek RTL8811CU/RTL8821CU USB wifi adapter driver version 5.4.1 for Linux 4.4.x up to 5.x
 
-Working with KuWfi Free Driver Wireless USB Wifi Adapter 600Mbps USB Ethernet 2.4G 5G Dual Band Wi-fi Network Card 802.11n/g/a/ac from AliExpress: https://www.aliexpress.com/item/32953749589.html?spm=2114.13010708.0.0.11234c4dY0qO4A
-
-
-Before build this driver make sure `make`, `gcc`, `linux-header` and `git` have been installed.
+Before build this driver make sure `make`, `gcc`, `linux-header`/`kernel-devel`, `bc` and `git` have been installed.
 
 ## First, clone this repository
 ```
@@ -11,6 +8,16 @@ mkdir -p ~/build
 cd ~/build
 git clone https://github.com/brektrou/rtl8821CU.git
 ```
+## Check the name of the interface
+
+Check the interface name of your wifi adapter using `ifconfig`. Usually, it will be wlan0 by default, but it may vary depends on the kernel and your device. On Ubuntu, for example, it may be named as wlx + MAC address. (https://www.freedesktop.org/wiki/Software/systemd/PredictableNetworkInterfaceNames/) 
+
+If this is the case, you can either disable the feature following the link above, or replace the name used in the driver by
+
+```
+grep -lr . | xargs sed -i '' -e '/ifcfg-wlan0/!s/wlan0/<name of the device>/g'
+```
+
 ## Build and install with DKMS
 
 DKMS is a system which will automatically recompile and install a kernel module when a new kernel gets installed or updated. To make use of DKMS, install the dkms package.
@@ -107,3 +114,4 @@ Use the tool 'iw', please don't use other tools like 'airmon-ng'
 ```
 iw dev wlan0 set monitor none
 ```
+
